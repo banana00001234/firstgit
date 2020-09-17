@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../static/layui/css/layui.css}" href="../static/layui/css/layui.css" media="all"/>
+</head>
+<body>
+    <div class="layui-layout-body">
+        <div class="layui-layout-admin">
+            <div class="layui-header">
+                <div class="layui-logo"> 预报名系统后台管理</div>
+                <ul class="layui-nav layui-layout-left">
+                    <li class="layui-nav-item">
+                        <a href="http://localhost:63342/springboot/templates/AdminManage.html" th:href="@{http://localhost:63342/springboot/templates/AdminManage.html}">报名信息管理</a>
+                    </li>
+
+                    <li class="layui-nav-item">
+                        <a href="http://localhost:63342/springboot/templates/NoticeManage.html" th:href="@{http://localhost:63342/springboot/templates/AdminManage.html}">通知管理</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="layui-body">
+                <div style="padding: 15px">
+                    <table id="ta-candi" lay-filter="ta-candi"></table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="layui-row" id="insertcandi" style="display:none;">
+
+            <form class="layui-form layui-from-pane" id="insertCandidate" style="margin-top:10px">
+
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">微信小程序openid</label>
+                    <div class="layui-input-block">
+                        <input placeholder="请输入openid" type="text" name="openid" id="openid"   autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">报名生姓名</label>
+                    <div class="layui-input-block">
+                        <input placeholder="请输入姓名" type="text" name="candidateName" id="candidateName" required  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <input type="hidden" name="id" id="id" value="0">
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">报名生电话</label>
+                    <div class="layui-input-block">
+                        <input type="text" placeholder="请输入报名生电话" name="candidatePhone" id="candidatePhone" required  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">报名生年龄</label>
+                    <div class="layui-input-block">
+                        <input type="number" placeholder="请输入报名生年龄" name="candidateAge" id="candidateAge" required  autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">报名生身份证号</label>
+                    <div class="layui-input-block">
+                        <input type="text" placeholder="请输入报名生身份证号" name="candidateIdnumber" id="candidateIdnumber" required  autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">报名生高考成绩</label>
+                    <div class="layui-input-block">
+                        <input type="number" placeholder="请输入报名生高考成绩" name="candidateNceeScore"  id="candidateNceeScore" required  autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">报名生高考志愿</label>
+                    <div class="layui-input-block">
+                        <input type="text" placeholder="请输入报名生高考志愿" name="candidateNceeWish" id="candidateNceeWish" required  autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">报名生性别</label>
+                    <div class="layui-input-block">
+                       <input type="radio"  name="candidateSex" value="man" title="男">
+                        <input type="radio"  name="candidateSex" value="woman" title="女">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">报名生籍贯</label>
+                    <div class="layui-input-block">
+                        <input placeholder="请输入报名生籍贯" type="text" name="candidateNativeplace" id="candidateNativeplace" required  autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">报名生获奖履历</label>
+                    <div class="layui-input-block">
+                        <input placeholder="请输入报名生获奖履历" type="text" name="candidateAward" id="candidateAward"   autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">报名生邮箱</label>
+                    <div class="layui-input-block">
+                        <input placeholder="请输入报名生邮箱" type="text" name="candidateEmail" id="candidateEmail" required  autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">出生日期</label>
+                    <div class="layui-input-block">
+                        <input type="text" placeholder="请输入报名生出生日期" name="candidateBirthday" id="candidateBirthday" required  autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item" style="margin-top:40px" id="check">
+                    <div class="layui-input-block">
+                        <button class="layui-btn  layui-btn-submit " lay-submit="" lay-filter="insertCandi">提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+
+        <script type="text/html" id="toolbarInsert">
+            <div class="layui-btn-container">
+                <button class="layui-btn layui-btn-sm" lay-event="insert">添加</button>
+            </div>
+        </script>
+        <script type="text/html" id="barEditandDel">
+            <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        </script>
+
+
+    </div>
+    <script type="text/javascript" src="../static/js/jquery-2.1.1.min.js" th:src="@{../static/js/jquery-2.1.1.min.js}"></script>
+    <script type="text/javascript" src="../static/layui/layui.js"  th:src="@{../static/layui/layui.js}" ></script>
+<script>
+
+
+        layui.use(['table','laydate','layer','form'],function () {
+            var table=layui.table;
+            var laydate = layui.laydate;
+            var layer=layui.layer;
+            var form=layui.form;
+
+            laydate.render({
+                elem:"#candidateBirthday",
+                type:"date",
+                format:"yyyy-MM-dd",
+                value:""
+            });
+            var candiTable={
+                elem: '#ta-candi',
+                url:'http://localhost:8080/selectallcandi',
+                page:true,
+                toolbar:'#toolbarInsert',
+                parseData:function(res){
+                    return{
+                        "code":res.code,
+                        "message":res.message,
+                        "count":res.count,
+                        "data":res.data
+                    }
+                },
+                cols:[[
+                    {field:'id',title:'id', sort:true,fixed:'left'},
+                    {field: 'openid',title: 'openid'},
+                    {field: 'candidateName',title:'报名生姓名'},
+                    {field: 'candidatePhone',title: '报名生电话'},
+                    {field: 'candidateAge',title: '报名生年龄',sort: true},
+                    {field: 'candidateSex',title: '报名生性别'},
+                    {field: 'candidateIdnumber',title: '报名生身份证号'},
+                    {field: 'candidateNceeScore',title: '报名生高考成绩'},
+                    {field: 'candidateNceeWish',title: '报考生高考志愿'},
+                    {field: 'candidateNativeplace',title: '报考生高考籍贯'},
+                    {field: 'candidateBirthday',title: '报考生出生日期',templet: function (data) {
+                            var date = new Date(data.candidateBirthday)
+                            var month= date.getMonth()+1;
+                            var birthday = date.getFullYear() + '年' + month+'月'+date.getDate()+'日';
+                            return birthday;
+                        }
+                    },
+                    {field: 'candidateAward',title: '报考生获奖履历'},
+                    {field: 'candidateEmail',title: '报考生邮箱'},
+                    {fixed:'right',title:'操作',toolbar:'#barEditandDel',width:200}
+                ]]
+            }
+                table.render(candiTable);
+            table.on('toolbar(ta-candi)',function (obj) {
+                var data=obj.data;
+                if(obj.event==='insert'){
+                    $("#insertCandidate")[0].reset();
+                    layui.form.render();
+                    $("#id").val(0);
+                    layer.open({
+                        type:1,
+                        offset:'15px',
+                        title:'添加报名生信息',
+                        area:['500px','600px'],
+                        content:$("#insertcandi")
+                    });
+                }
+
+            });
+            table.on('tool(ta-candi)',function (obj) {
+                // var check=table.checkStatus(obj.config.id);
+                // var checkdata=check.data;
+                var data=obj.data;
+                var das=[];
+                switch (obj.event) {
+                    case 'edit':
+                        $("#id").val(data.id);
+                        $("#openid").val(data.openid);
+                        $("#candidateName").val(data.candidateName);
+                        $("#candidatePhone").val(data.candidatePhone);
+                        $("#candidateAge").val(data.candidateAge);
+                        $("#candidateSex").val(data.candidateSex);
+                        $("#candidateIdnumber").val(data.candidateIdnumber);
+                        $("#candidateNceeScore").val(data.candidateNceeScore);
+                        $("#candidateNceeWish").val(data.candidateNceeWish);
+                        $("#candidateNativeplace").val(data.candidateNativeplace);
+                        $("#candidateBirthday").val(data.candidateBirthday);
+                        $("#candidateAward").val(data.candidateAward);
+                        $("#candidateEmail").val(data.candidateEmail);
+                        layer.open({
+                            type:1,
+                            offset:'15px',
+                            title:'修改报名信息',
+                            area:['500px','600px'],
+                            content:$("#insertcandi")
+                        });
+                        break;
+                    case 'del':
+                        layer.confirm('删除该行吗?',function () {
+                            $.ajax({
+                                url:'http://localhost:8080/admindeletecandi',
+                                data:{
+                                    id:data.id
+                                },
+                                success:function (res) {
+                                    if(res.status==200){
+                                        layer.msg("删除成功");
+                                        table.reload('ta-candi',{
+                                            page: {
+                                                curr: 1
+                                            },
+                                            url: 'http://localhost:8080/selectallcandi'
+                                        });
+                                    }
+                                    else {
+                                        layer.msg("删除失败")
+                                    }
+
+                                }
+                            })
+                        }
+
+                    )
+
+                }
+
+            })
+            form.on('submit(insertCandi)',function (data) {
+                $.ajax({
+                    url:'http://localhost:8080/admininsertcandi',
+                    type:"post",
+                    contentType:'application/json',
+                    dataType:"json",
+                    data: JSON.stringify(data.field),
+                    success:function (res) {
+                        if(res.status==200){
+                            layer.closeAll();
+                            alert("插入成功"+res.message)
+                        }else {
+                            layer.msg("添加失败"+res.message);
+                        }
+                        table.reload('ta-candi',{
+                            page: {
+                                curr: 1
+                            },
+                            url: 'http://localhost:8080/selectallcandi'
+                        });
+                    },
+                    fail:function () {
+                        console.log(data.field)
+                    }
+                });
+                return false;
+            })
+        });
+
+
+
+
+</script>
+
+</body>
+
+
+</html>

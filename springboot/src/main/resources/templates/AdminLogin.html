@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>预报名系统后台管理</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../static/layui/css/layui.css}" href="../static/layui/css/layui.css" media="all"/>
+</head>
+<body>
+    <form class="layui-form" method="post">
+        <div class="layui-col-sm12 layui-col-md12">
+            <div class="layui-form-item">
+                <input class="layui-input" type="text" name="adminName" required autocomplete="off" placeholder="请输入管理员账号" >
+                <i class="layui-icon layui-icon-username" ></i>
+            </div>
+        </div>
+        <div class="layui-col-sm12 layui-col-md12" >
+            <div class="layui-form-item">
+                <input class="layui-input" type="password" name="password" required autocomplete="off" placeholder="请输入管理员密码">
+            </div>
+        </div>
+        <div class="layui-col-sm12 layui-col-md12">
+            <button class="layui-btn layui-btn-fluid" lay-submit="" lay-filter="login">登录</button>
+        </div>
+    </form>
+    <script type="text/javascript" src="../static/js/jquery.js" th:src="@{../static/js/jquery.js}"></script>
+    <script type="text/javascript" src="../static/js/jquery-2.1.1.min.js" th:src="@{../static/js/jquery-2.1.1.min.js}"></script>
+    <script type="text/javascript" src="../static/layui/layui.js"  th:src="@{../static/layui/layui.js}" ></script>
+<script>
+
+
+    layui.use(['form'],function () {
+        var form;
+        form=layui.form
+
+        form.on('submit(login)',function (data) {
+            console.log(data)
+            $.ajax({
+                url:'http://localhost:8080/adminlogin',
+                type:"POST",
+                data:{
+                    password:data.field.password,
+                    adminname:data.field.adminName
+                },
+                dataType:"json",
+                success:function (data) {
+                    console.log("res="+data.status)
+                    if (data.status!=200){
+                        alert("用户名或密码错误")
+                    }
+                    else {
+                        alert("why");
+                        // $.ajax({
+                        //     url: "http://localhost:8080/adminhome",
+                        //     success:function () {
+                        //         window.location.href='/AdminManage.html'
+                        //     }
+                        // })
+                        window.location.href='http://localhost:63342/springboot/templates/AdminManage.html';
+                    }
+
+
+                },
+                fail: function () {
+                    alert("fail network cannect")
+                }
+            })
+            return false;
+        })
+
+    })
+
+
+</script>
+</body>
+</html>
