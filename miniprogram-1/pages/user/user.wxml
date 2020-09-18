@@ -1,0 +1,41 @@
+<!--pages/page/pages.wxml-->
+<view class="container">
+  <view class="user">
+    <view wx:if="{{hasuserinfo}}" class="user-login" >
+      <image class="userImg" src="{{userinfo.avatarUrl}}">
+  
+      </image>
+      <text>{{userinfo.nickName}}</text>
+    
+    </view>  
+    <view wx:else  class="user-unlogin">
+      <image style="width:150px;height:150px" src="../../image/user-icon.png"></image>
+      <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" style="width:150px"> 授权用户信息 </button>
+    </view>
+    
+  
+  </view>
+  <view class="more">
+    <navigator class="navigator" url="../select/select" open-type="navigate">
+      <view class="enroll">
+        <view class="" style="display:flex;align-items:center">
+        <image style="height:20px;width:20px;padding-left:10px" src="/image/note-actived.png"></image>
+        <text style="padding-left:5px;font-size:17px">已报名信息</text>
+        </view>  
+        <image class="arrowright" src="/image/icon-arrowdown.png "></image>
+      </view>
+    </navigator>
+    
+    <!-- <navigator class="navigator" url="../select/select" open-type="navigate">
+      <view class="enroll">
+        <view class="" style="display:flex;align-items:center">
+        <image style="height:20px;width:20px;padding-left:10px" src="/image/more.png"></image>
+        <text style="padding-left:5px;font-size:17px">关于</text>
+        </view>  
+        <image class="arrowright" src="/image/icon-arrowdown.png "></image>
+      </view>
+    </navigator> -->
+    
+  </view>
+
+</view>

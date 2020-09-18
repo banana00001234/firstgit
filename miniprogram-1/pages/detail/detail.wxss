@@ -1,0 +1,62 @@
+/* pages/detail/detail.wxss */
+.navigator{
+  width: 100%;
+  height: 50px;
+  background:deepskyblue;
+}
+.scroll{
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+.scrollview-item{
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
+  display: inline-block;
+  background-color: deepskyblue;
+  width: 250rpx;
+  color:gainsboro;
+  box-shadow:grey;
+  border-bottom: solid 1px white;
+}
+.active{
+  color: white;
+  border-bottom: solid 2px rgb(20, 76, 230);
+}
+.noactive{
+  color:gray;
+}
+.load-more{
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:gainsboro;
+}
+.navi{
+  display: flex;
+  flex-direction:row;
+  height: 50px;
+  width: 100%;
+  border-top: 1rpx solid #f1f1f1;
+  align-items: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.no-item{
+  width: 88%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  
+}
+.text-main{
+  font-size: 20px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.text-top{
+  border:1px solid red;
+  color: red;
+  font-size: 12px;
+}

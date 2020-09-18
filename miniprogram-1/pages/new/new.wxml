@@ -1,0 +1,38 @@
+<!--pages/new/new.wxml-->
+<wxs module = "m1">
+
+var ToDate = function(number1){
+
+var date = getDate(number1);
+
+var Y = date.getFullYear() + '-';
+
+var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+
+var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+
+
+
+return (Y + M + D );
+
+}
+
+module.exports.ToDate = ToDate;
+
+</wxs>
+<view class="notice-container">
+  <view class="notice-header">
+    <text class="notice-title">
+      {{noticedetail[0].noTitle}}
+    </text>
+    <view class="notice-title-detail">
+      <text>作者:{{noticedetail[0].noAuthor}}</text>
+      <text >发布日期:{{m1.ToDate(noticedetail[0].noDatetime)}}</text>
+    </view>
+  </view>
+  <view class="notice-body">
+    <view class="notice-content">
+    <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{noticedetail[0].noContent}}
+    </view>
+  </view>
+</view>

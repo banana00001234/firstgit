@@ -1,0 +1,89 @@
+<wxs module = "m1">
+
+var ToDate = function(number1){
+
+var date = getDate(number1);
+
+var Y = date.getFullYear() + '-';
+
+var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+
+var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+
+
+
+return (Y + M + D );
+
+}
+
+module.exports.ToDate = ToDate;
+
+</wxs>
+
+<view class="container">
+ <view class="selection">
+  <swiper indicator-dots="{{dots}}" circular="{{cir}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="change" style="height:270px">
+  <block wx:for="{{imgUrls}}" wx:key="*this">
+   <swiper-item>
+    <image  src="{{item}}"   style="width:100%;height:100%"></image>
+   </swiper-item>
+  
+  
+  </block>
+  </swiper>
+  </view>
+
+<view class="selection">
+  <view class="newheader">
+  <image src="/image/chuanshan.jpg" style="height:25px;width:25px"></image>
+    <text>南华大学</text>
+  </view>
+  <view class="sign-content">
+    <navigator url="/pages/login/logins" style="height:90px">
+      <view class="sign-container">
+        <image src="/image/note-actived.png" class="sign"></image>
+        <view class="sign-right">
+          <text style="font-size:13px">报名入口</text>
+          <image src="/image/arrowright.png" ></image>
+        </view>
+      </view> 
+    
+    </navigator>
+         
+    
+  
+  </view>
+
+
+</view>
+
+<view class="selection">
+  <view class="header">
+   <text class="text-main">校园新闻</text>
+   <view class="text-all" bindtap="allnews">
+   <text class="text-all-font">全部新闻</text>
+   </view>
+  </view>
+  
+  <block wx:for="{{notice}}" wx:key="">
+  <view class="content" index="{{index}}">
+    <navigator url="/pages/new/new?id={{item.id}}" class="navi">
+      <view class="no-top-true" wx:if="{{item.noTop>1}}">
+      <text class="text-top">置顶</text>  
+          
+      </view>
+      <view class="no-top-false" wx:else>
+      </view>
+
+      <view class="no-item">
+      <view class="no-title">{{item.noTitle}}</view>
+      <view class="no-time">{{m1.ToDate(item.noDatetime)}}</view>
+      </view>
+      
+    </navigator>
+     
+    
+  </view>
+  </block>
+</view>
+</view>

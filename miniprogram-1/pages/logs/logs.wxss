@@ -1,0 +1,41 @@
+/* .log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  margin: 10rpx;
+} */
+.page{
+  display: flex;
+}
+.content-header{
+  width: 650rpx;
+  height: 300rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center; 
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  border-bottom: 1px solid gainsboro;
+}
+
+.nanhua{
+  width: 30%;
+  height: 65%
+}
+.body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.apply-title{
+  font-size: 20px;
+}
+.apply-content{
+  font-size: 15px;
+  color:gainsboro;
+  margin-top: 30px;
+}

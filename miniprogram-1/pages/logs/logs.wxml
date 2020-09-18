@@ -1,0 +1,15 @@
+<!--logs.wxml-->
+<!-- <view class="container log-list">
+  <!-- <block wx:for="{{logs}}" wx:for-item="log"> 
+    <text class="log-item">{{index + 1}}. {{log}}</text>
+  </block>-->
+   <!-- 这里是文章详情的内容。。。。当前的文章id是{{articleId}}
+</view> --> 
+<view class="content-header">
+  <image src="../../image/nanhua.jpg" class="nanhua"></image>
+</view>
+<view class="body">
+  <view class="apply-title">申请获得以下权限</view>
+  <view class="apply-content">获得你的公开信息(昵称，头像等)</view>
+</view>
+<button type="primary" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">授权登录</button>

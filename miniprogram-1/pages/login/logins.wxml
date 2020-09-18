@@ -1,0 +1,95 @@
+<view class="mcontainer">
+    <view class="item">
+         <image class="login-image" src="/image/core8.jpg"></image>
+    </view>
+    <form bindsubmit="formsubmit">
+    <view class="login-container">
+      <view class="login-item">
+         <!-- <view class="login-item-user">用户:</view> -->
+         <view class="login-item-input"><input class="input-item" name="candidate_name" type="text" bindinput="nameInput" placeholder="输入姓名" /><text class="red">(必填)</text></view>
+      </view>
+    </view>
+    <view class="login-container">
+      <view class="login-item">
+         <!-- <view class="login-item-password">密码:</view> -->
+         <view class="login-item-input"><input class="input-item" name="candidate_phone" type="number" bindblur="phoneInput" placeholder="输入手机号"/><text class="red">(必填)</text></view>
+      </view>
+    </view>
+    <view class="login-container">
+      <view class="login-item">
+         <!-- <view class="login-item-password">密码:</view> -->
+         <view class="login-item-input"><input class="input-item" type="number" name="candidate_age"bindinput="ageInput" placeholder="输入年龄"/><text class="red">(必填)</text></view>
+      </view>
+    </view>
+    <view class="login-container">
+      <view class="login-item" >
+         <!-- <view class="login-item-password">密码:</view> -->
+      
+      <view class="login-item-sex" style="width:95%;display:flex;justify-content:space-between;font-color:grey"><text style="color:grey">选择性别:</text>   
+      <radio-group name="candidate_sex" >
+        <radio value="man" >男</radio>
+        <radio value="woman">女</radio>
+      </radio-group>
+      <text>(必填)</text>
+      </view>
+      </view>
+    </view>
+    <view class="login-container">
+      <view class="login-item">
+         <!-- <view class="login-item-password">密码:</view> -->
+         <view class="login-item-input"><input class="input-item" type="text" name="candidate_birthday"bindblur="birthdayInput"  placeholder="输入生日(例:1999-01-01)"/><text class="red">(必填)</text></view>
+      </view>
+    </view>
+    <view class="login-container">
+      <view class="login-item">
+         <!-- <view class="login-item-password">密码:</view> -->
+         <view class="login-item-input"><input class="input-item" type="idcard" name="candidate_idnumber"bindblur="idnumberInput" placeholder="输入身份证号"/><text class="red">(必填)</text></view>
+      </view>
+    </view>
+    <view class="login-container">
+      <view class="login-item">
+         <!-- <view class="login-item-password">密码:</view> -->
+         <view class="login-item-input"><input class="input-item" name="candidate_nativeplace"type="text"bindinput="nativeInput" placeholder="输入籍贯"/><text class="red">(必填)</text></view>
+      </view>
+    </view>
+    <view class="login-container">
+      <view class="login-item">
+         <!-- <view class="login-item-password">密码:</view> -->
+         <view class="login-item-input"><input class="input-item" bindblur="emailInput" name="candidate_email"placeholder="输入邮箱"/><text class="red">(必填)</text></view>
+      </view>
+    </view>
+    <view class="login-container">
+      <view class="login-item">
+         <!-- <view class="login-item-password">密码:</view> -->
+         <view class="login-item-input"><input class="input-item" name="candidate__ncee_score"type="number" bindinput="scoreInput" placeholder="输入高考成绩"/><text class="red">(必填)</text></view>
+      </view>
+    </view>
+    <view class="login-container">
+      <view class="login-item">
+         <!-- <view class="login-item-password">密码:</view> -->
+         <view class="login-item-input"><input class="input-item" name="candidate_ncee_wish"type="text" bindinput="wishInput" placeholder="输入高考志愿"/><text class="red">(必填)</text></view>
+      </view>
+    </view>
+    <view class="login-container">
+      <view class="login-item">
+         <!-- <view class="login-item-password">密码:</view> -->
+         <view class="login-item-input">
+         <textarea class="input-item" name="candidate_award" type="text"  placeholder="若有获奖事迹在此输入(非必填)" auto-height="true"/>
+         </view>
+      </view>
+    </view>
+    
+   
+    <!-- <view class="forget-container">
+       <view class="psw-forgot">
+       忘记密码？
+       </view>
+    </view> -->
+    <view class="login-button"> 
+        <button form-type="submit">报名</button>
+    </view>
+    <view class="reset-button"> 
+        <button form-type="reset">重置</button>
+    </view>
+     </form>
+</view>

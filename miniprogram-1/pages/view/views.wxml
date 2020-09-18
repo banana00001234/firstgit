@@ -1,0 +1,34 @@
+<!--pages/view/views.wxml-->
+<view class="selection">
+  <view class="header">
+   <text class="text-main">校园新闻</text>
+   <view class="text-all" bindtap="savedpic">
+   <text class="text-all-font">全部新闻</text>
+   </view>
+  </view>
+  
+  <block wx:for="{{notice}}" wx:key="">
+  <view class="content" index="{{index}}">
+    <navigator url="/pages/detail/detail?id={{item.id}}" class="navi">
+      <view class="no-top-true" wx:if="{{item.noTop>1}}">
+      <text>置顶</text>      
+      </view>
+      <view class="no-top-false" wx:else>
+      
+      </view>
+      <view class="no-item">
+
+      <view class="no-title">{{item.noTitle}}</view>
+      <view class="no-time">{{item.noDatetime}}</view>
+      </view>
+      
+    </navigator>
+     
+    
+  </view>
+  </block>
+  
+
+
+</view>
+

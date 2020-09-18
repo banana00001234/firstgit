@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/select/select",
+    "pages/logs/logs",
+    "pages/user/user",
+    "pages/detail/detail",
+    "pages/login/logins",
+    "pages/view/views",
+    "pages/new/new"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4169E1",
+    "navigationBarTitleText": "预报名系统",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/image/home-icon.png",
+        "selectedIconPath": "image/home-selectIcon.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人",
+        "iconPath": "image/user-icon.png",
+        "selectedIconPath": "image/user-selectIcon.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": ""
+    }
+  }
+}

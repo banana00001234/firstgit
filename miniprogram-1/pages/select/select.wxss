@@ -1,0 +1,42 @@
+/* pages/select/select.wxss */
+.container{
+  padding: 5px;
+}
+.input-item{
+  border-left: 1px solid #cfc9c9;
+  padding-left: 5px;
+}
+
+.select-item{
+  display: flex;
+  justify-content: start;
+  border-bottom: 1px solid grey;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 30px;
+  align-items: center;
+}
+.text{
+  width: 25%;
+  padding-left: 20px;
+}
+.awardtext{
+  height: 30px;
+  width: 90%;
+  padding-left: 20px;
+  padding-right: 10px;
+  align-items: center;
+}
+.select-item-award{
+  display: block;
+  border-bottom: 1px solid grey;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: auto;
+  align-items: center;
+}
+.edit{
+  display: block;
+  justify-content: center;
+  align-items: center;
+}

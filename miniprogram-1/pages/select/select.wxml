@@ -1,0 +1,79 @@
+<!--pages/select/select.wxml-->
+<view class="container">
+  <form bindsubmit="updateInfo">
+    <view class="select-item">
+    <view class="text">
+    <text>姓名:</text>
+    </view>
+    <input class="input-item" name="candidate_name" type="text" bindinput="nameInput" value="{{name}}" disabled="{{disabled}}"></input>
+    </view>
+    <view class="select-item">
+    <view class="text">
+    <text>年龄:</text>
+    </view>
+      <input class="input-item" type="number" name="candidate_age"bindinput="ageInput" value="{{age}}"  disabled="{{disabled}}"/>
+    </view>
+    <view class="select-item">
+    <view class="text">
+    <text>电话:</text>
+    </view>
+      <input class="input-item" name="candidate_phone" type="number" bindblur="phoneInput" value="{{phone}}" disabled="{{disabled}}"/>
+    </view>
+    <view class="select-item">
+    <view class="text">
+    <text>性别:</text>
+    </view>   
+      <radio-group name="candidate_sex" >
+        <radio value="man" disabled="{{disabled}}" checked="{{mansex}}">男</radio>
+        <radio value="woman" disabled="{{diabled}}" checked="{{womansex}}">女</radio>
+      </radio-group>
+    </view>
+    <view class="select-item">
+    <view class="text">
+    <text>生日:</text>
+    </view>
+      <input class="input-item" type="text" name="candidate_birthday"bindblur="birthdayInput"  value="{{birthday}}" disabled="{{disabled}}" placeholder="例:1980-01-01"/>
+    </view>
+    <view class="select-item">
+    <view class="text">
+    <text>身份证号:</text>
+    </view>
+      <input class="input-item" type="idcard" name="candidate_idnumber"bindblur="idnumberInput" value="{{idnumber}}" disabled="{{disabled}}"/>
+    </view>
+    <view class="select-item">
+    <view class="text">
+    <text>籍贯:</text>
+    </view>
+      <input class="input-item" name="candidate_nativeplace"type="text"bindinput="nativeInput" value="{{nativeplace}}" disabled="{{disabled}}"/>
+    </view >
+    <view class="select-item">
+    <view class="text">
+    <text>邮箱:</text>
+    </view>
+      <input class="input-item" bindblur="emailInput" name="candidate_email"value="{{email}}" disabled="{{disabled}}"/>
+    </view>
+    <view class="select-item">
+      <view class="text">
+    <text>高考分数:</text>
+    </view>
+      <input class="input-item" name="candidate__ncee_score"type="number" bindinput="scoreInput" value="{{nceescore}}" disabled="{{disabled}}"/>
+    </view>
+    <view class="select-item">
+      <view class="text">
+    <text>高考志愿:</text>
+    </view>
+      <input class="input-item" name="candidate_ncee_wish"type="text" bindinput="wishInput" value="{{nceewish}}" disabled="{{disabled}}"/>
+    </view>
+    <view class="select-item-award">
+    <view class="awardtext">
+    <text>获奖事迹:</text>
+    </view>
+     <textarea class="input-item"       name="candidate_award" type="text"  value="{{award}}" disabled="{{disabled}}" auto-height="true"style="border-left:0px;height:auto"/>
+    </view>
+    <view class="edit">
+     <button bindtap="update">修改</button>
+     <button bindtap="update_cancel" >取消</button>
+     <button form-type="submit" type="primary" >提交修改</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,45 @@
+/* pages/new/new.wxss */
+.page{
+  background-color: grey;
+}
+.notice-container{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.notice-header{
+  height: auto;
+  margin-bottom: 10rpx;
+  
+}
+.notice-body{
+  border-top: 1rpx solid gainsboro;
+  display: flex;
+  overflow-wrap: break-word;
+}
+.notice-title{
+  
+  
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  
+}
+.notice-title-detail{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  border-bottom: 5px
+}
+.notice-title-detail text{
+  color:darkgray;
+
+}
+.notice-content{
+  display: flex;
+  margin-top: 10px;
+  overflow-wrap: break-word;
+  font-size: 15px;
+}

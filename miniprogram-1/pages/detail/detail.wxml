@@ -1,0 +1,56 @@
+<!--pages/detail/detail.wxml-->
+<wxs module = "m1">
+
+var ToDate = function(number1){
+
+var date = getDate(number1);
+
+var Y = date.getFullYear() + '-';
+
+var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+
+var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+
+
+
+return (Y + M + D );
+
+}
+
+module.exports.ToDate = ToDate;
+
+</wxs>
+<view class="navigator">
+  <scroll-view class="scroll" >
+    <view class="scrollview-item {{currentindex==indx ? 'active':''}}" wx:for="{{notype}}" wx:for-index="indx" data-indx="{{indx}}" bindtap="onswitch">
+      {{item.text}}
+    </view>
+  </scroll-view>
+
+  <scroll-view>
+    <block wx:for="{{notice}}" wx:key="">
+  <view class="content" index="{{index}}">
+    <navigator url="/pages/new/new?id={{item.id}}" class="navi">
+      <view class="no-top-true" wx:if="{{item.noTop>1}}">
+      <text class="text-top">置顶</text>      
+      </view>
+      <view class="no-top-false" wx:else>
+      
+      </view>
+      <view class="no-item">
+
+      <view class="no-title"><text style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{item.noTitle}}</text></view>
+      <view class="no-time">{{m1.ToDate(item.noDatetime)}}</view>
+      </view>
+      
+    </navigator>
+     
+    
+  </view>
+  </block>
+  
+  </scroll-view>
+  <view class="load-more" hidden="{{ishidden}}">
+    <image src="/image/loading.gif " style="height:20px;width:20px"></image>
+  </view>
+</view>
